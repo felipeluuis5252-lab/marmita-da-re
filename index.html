@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Marmitaria da Rê | Comida Caseira e Marmitas</title>
+<meta name="description" content="Confira o cardápio da Marmitaria da Rê e peça sua marmita caseira pelo WhatsApp.">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph (para compartilhamento no WhatsApp/redes sociais) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marmitaria da Rê | Comida Caseira e Marmitas">
+<meta property="og:description" content="Confira o cardápio da Marmitaria da Rê e peça sua marmita caseira pelo WhatsApp.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
+<meta property="og:locale" content="pt_BR">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <span class="logo">Marmitaria <em>da Rê</em> <span aria-hidden="true">🍲</span></span>
+    <a href="#cardapio" class="btn btn-accent btn-sm">Ver Cardápio</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1400&auto=format&fit=crop" alt="Marmita caseira com arroz, feijão, frango grelhado e salada" fetchpriority="high">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-badge">🔥 Feita fresquinha todos os dias</span>
+      <h1>Comida caseira<br>feita com carinho <span aria-hidden="true">❤️</span></h1>
+      <p class="hero-sub">Confira o cardápio da Marmitaria da Rê e peça sua marmita pelo WhatsApp — pronto em poucos minutos.</p>
+
+      <div class="hero-ctas">
+        <a href="#cardapio" class="btn btn-primary btn-lg">🍽️ Ver Cardápio de Hoje</a>
+        <a href="#" id="heroWhatsappBtn" class="btn btn-whatsapp btn-lg">💬 Pedir pelo WhatsApp</a>
+      </div>
+
+      <ul class="trust-line">
+        <li>🌿 Comida fresquinha</li>
+        <li>🏠 Feita no dia</li>
+        <li>💬 Pedido fácil pelo WhatsApp</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= COMO FUNCIONA ================= -->
+  <section class="steps-section">
+    <div class="container">
+      <div class="steps-grid">
+        <div class="step">
+          <span class="step-num">1</span>
+          <h3>Escolha sua marmita</h3>
+          <p>Veja o cardápio do dia e escolha o prato e a quantidade.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">2</span>
+          <h3>Peça pelo WhatsApp</h3>
+          <p>Clique no botão e envie o pedido já pronto, sem digitar nada.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">3</span>
+          <h3>Combine e receba</h3>
+          <p>A gente confirma o pagamento, entrega ou retirada com você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CARDÁPIO ================= -->
+  <section id="cardapio" class="menu-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>🍽️ Cardápio de Hoje</h2>
+        <p class="menu-date" id="menuDate"></p>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Cards gerados automaticamente pelo script.js a partir do array "menu" -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POR QUE PEDIR ================= -->
+  <section class="why-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Por que pedir na Marmitaria da Rê?</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">❤️</span>
+          <h3>Feita com carinho</h3>
+          <p>Comida preparada pensando em você.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">🥘</span>
+          <h3>Comida caseira</h3>
+          <p>Aquele sabor de comida feita em casa.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">🔥</span>
+          <h3>Feita fresquinha</h3>
+          <p>Preparada para deixar seu almoço ainda melhor.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon" aria-hidden="true">💬</span>
+          <h3>Pedido fácil</h3>
+          <p>Escolha sua marmita e peça direto pelo WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALERIA ================= -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Direto da nossa cozinha</h2>
+      </div>
+      <div class="gallery-grid">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=700&auto=format&fit=crop" alt="Prato de comida caseira brasileira com arroz e feijão">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=700&auto=format&fit=crop" alt="Frango grelhado com legumes">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=700&auto=format&fit=crop" alt="Salada fresca colorida">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=700&auto=format&fit=crop" alt="Marmita completa pronta para entrega">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ENTREGA + HORÁRIO ================= -->
+  <section class="info-section">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-card">
+          <h2>📍 Entrega e Retirada</h2>
+          <p>Consulte as regiões de entrega e os valores pelo WhatsApp.</p>
+          <a href="#" id="deliveryWhatsappBtn" class="btn btn-whatsapp">💬 Falar com a Marmitaria</a>
+        </div>
+
+        <div class="info-card">
+          <h2>🕐 Horário de Atendimento</h2>
+          <ul class="hours-list" id="hoursList">
+            <!-- Gerado automaticamente pelo script.js a partir do objeto "config.hours" -->
+          </ul>
+          <p class="hours-note">(horários podem ser alterados)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA FINAL ================= -->
+  <section class="final-cta">
+    <div class="container final-cta-inner">
+      <h2>Bateu aquela fome?</h2>
+      <p>Veja o cardápio de hoje e peça sua marmita agora mesmo pelo WhatsApp.</p>
+      <a href="#cardapio" class="btn btn-accent btn-lg">🍽️ Ver Cardápio</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <span class="logo logo-footer">Marmitaria <em>da Rê</em> <span aria-hidden="true">🍲</span></span>
+  <p>Comida caseira feita com carinho <span aria-hidden="true">❤️</span></p>
+  <a href="#" id="footerWhatsappBtn" class="btn btn-whatsapp">💬 Pedidos pelo WhatsApp</a>
+  <p class="copyright">© <span id="year"></span> Marmitaria da Rê. Todos os direitos reservados.</p>
+</footer>
+
+<!-- Botão flutuante do WhatsApp -->
+<a href="#" id="floatingWhatsappBtn" class="floating-whatsapp" aria-label="Pedir pelo WhatsApp">
+  <span aria-hidden="true">💬</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
