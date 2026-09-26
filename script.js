@@ -1,160 +1,353 @@
-// ===============================
-// CONFIGURAÇÕES DA MARMITARIA
-// ===============================
-// Edite os valores abaixo para personalizar o site.
+/* =====================================================
+   MARMITA DA RÊ
+   SCRIPT.JS
+===================================================== */
 
-const config = {
-  businessName: "Marmitaria da Rê",
 
-  // Troque pelo número de WhatsApp real, com código do país (55) + DDD, sem espaços ou símbolos.
-  // Exemplo: "5511987654321"
-  whatsappNumber: "YOUR_WHATSAPP_NUMBER",
+/* =====================================================
+   CONFIGURAÇÃO DO WHATSAPP
+===================================================== */
 
-  // Horário de atendimento (exibido na seção "Horário de Atendimento")
-  hours: [
-    { day: "Segunda a sexta", time: "10:30 às 14:00" },
-    { day: "Sábado", time: "10:30 às 14:00" },
-    { day: "Domingo", time: "Fechado" }
-  ]
-};
+/*
+   COLOQUE SEU NÚMERO AQUI.
 
-// ===============================
-// CARDÁPIO — edite os itens abaixo
-// ===============================
-// Adicione, remova ou altere marmitas livremente.
-// "price" deve ser um número (sem "R$").
-// "image" é opcional — troque pela foto real do prato quando tiver.
+   Exemplo:
+   5511999999999
 
-const menu = [
-  {
-    name: "Marmita Tradicional",
-    description: "Arroz, feijão, frango grelhado, macarrão e salada.",
-    price: 18.00,
-    image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    name: "Marmita Especial",
-    description: "Arroz, feijão, bife acebolado, purê de batata e salada.",
-    price: 22.00,
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    name: "Marmita Fit",
-    description: "Arroz integral, frango grelhado, legumes e salada.",
-    price: 20.00,
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=600&auto=format&fit=crop"
-  }
+   Não coloque:
+   +55
+   espaços
+   parênteses
+   traços
+*/
+
+const WHATSAPP_NUMBER = "5511999999999";
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+const products = [
+
+    {
+        id: 1,
+        name: "Marmita Tradicional",
+        description: "Arroz, feijão, frango, salada e farofa.",
+        price: 16.90,
+        category: "tradicional",
+        badge: "MAIS PEDIDA",
+        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 2,
+        name: "Marmita Fitness",
+        description: "Frango grelhado, legumes, arroz integral e salada.",
+        price: 18.90,
+        category: "fitness",
+        badge: "FIT",
+        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 3,
+        name: "Marmita Grande",
+        description: "Mais quantidade para quem não abre mão de sabor.",
+        price: 22.90,
+        category: "grande",
+        badge: "MAIOR PORÇÃO",
+        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 4,
+        name: "Combo 3 Marmitas",
+        description: "Escolha suas refeições e economize no combo.",
+        price: 49.90,
+        category: "combo",
+        badge: "ECONOMIZE",
+        image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 5,
+        name: "Frango Grelhado",
+        description: "Frango grelhado com arroz, feijão e legumes.",
+        price: 19.90,
+        category: "tradicional",
+        badge: "",
+        image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 6,
+        name: "Carne Acebolada",
+        description: "Carne acebolada acompanhada de arroz e feijão.",
+        price: 21.90,
+        category: "tradicional",
+        badge: "",
+        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 7,
+        name: "Marmita Low Carb",
+        description: "Proteína, legumes e salada em uma refeição equilibrada.",
+        price: 20.90,
+        category: "fitness",
+        badge: "LOW CARB",
+        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=85"
+    },
+
+    {
+        id: 8,
+        name: "Combo 5 Marmitas",
+        description: "Cinco refeições para deixar sua semana mais prática.",
+        price: 79.90,
+        category: "combo",
+        badge: "ECONOMIZE",
+        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+    }
+
 ];
 
-// ===============================
-// A partir daqui: lógica do site
-// (não é necessário editar)
-// ===============================
 
-document.addEventListener('DOMContentLoaded', () => {
+/* =====================================================
+   ELEMENTOS
+===================================================== */
 
-  /* ---------- Formata preço em R$ ---------- */
-  const formatPrice = (value) =>
-    value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const productsContainer = document.getElementById("products");
 
-  /* ---------- Monta link de WhatsApp com mensagem ---------- */
-  const buildWhatsappUrl = (message) => {
-    const encoded = encodeURIComponent(message);
-    return `https://wa.me/${config.whatsappNumber}?text=${encoded}`;
-  };
+const filters = document.querySelectorAll(".filter");
 
-  /* ---------- Data do cardápio (automática) ---------- */
-  const menuDateEl = document.getElementById('menuDate');
-  if (menuDateEl) {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yyyy = today.getFullYear();
-    menuDateEl.textContent = `Cardápio atualizado em ${dd}/${mm}/${yyyy}`;
-  }
 
-  /* ---------- Gera os cards do cardápio ---------- */
-  const menuGrid = document.getElementById('menuGrid');
+/* =====================================================
+   FORMATAÇÃO DE PREÇO
+===================================================== */
 
-  menu.forEach((meal, index) => {
-    const card = document.createElement('div');
-    card.className = 'meal-card';
+function formatPrice(price) {
 
-    const photoHtml = meal.image
-      ? `<div class="meal-photo"><img loading="${index === 0 ? 'eager' : 'lazy'}" src="${meal.image}" alt="${meal.name}"></div>`
-      : '';
-
-    card.innerHTML = `
-      ${photoHtml}
-      <div class="meal-body">
-        <h3>${meal.name}</h3>
-        <p class="meal-desc">${meal.description}</p>
-        <span class="meal-price">R$ ${formatPrice(meal.price)}</span>
-
-        <div class="qty-selector">
-          <button type="button" class="qty-btn qty-minus" aria-label="Diminuir quantidade">&minus;</button>
-          <span class="qty-value" data-qty-value>1</span>
-          <button type="button" class="qty-btn qty-plus" aria-label="Aumentar quantidade">+</button>
-        </div>
-
-        <a href="#" class="btn btn-whatsapp btn-block order-btn">💬 Pedir pelo WhatsApp</a>
-      </div>
-    `;
-
-    menuGrid.appendChild(card);
-
-    let quantity = 1;
-    const qtyValueEl = card.querySelector('[data-qty-value]');
-    const minusBtn = card.querySelector('.qty-minus');
-    const plusBtn = card.querySelector('.qty-plus');
-    const orderBtn = card.querySelector('.order-btn');
-
-    const updateOrderLink = () => {
-      qtyValueEl.textContent = quantity;
-
-      const message = quantity === 1
-        ? `Olá, Rê! Gostaria de pedir 1 ${meal.name} no valor de R$ ${formatPrice(meal.price)}.`
-        : `Olá, Rê! Gostaria de pedir ${quantity}x ${meal.name} (R$ ${formatPrice(meal.price)} cada).`;
-
-      orderBtn.setAttribute('href', buildWhatsappUrl(message));
-    };
-
-    minusBtn.addEventListener('click', () => {
-      if (quantity > 1) {
-        quantity -= 1;
-        updateOrderLink();
-      }
+    return price.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
     });
 
-    plusBtn.addEventListener('click', () => {
-      quantity += 1;
-      updateOrderLink();
+}
+
+
+/* =====================================================
+   GERAR PRODUTOS
+===================================================== */
+
+function renderProducts(category = "todos") {
+
+    productsContainer.innerHTML = "";
+
+    const filteredProducts = category === "todos"
+        ? products
+        : products.filter(product => product.category === category);
+
+
+    filteredProducts.forEach(product => {
+
+        const card = document.createElement("article");
+
+        card.className = "product-card";
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy"
+                >
+
+                ${
+                    product.badge
+                        ? `<span class="badge">${product.badge}</span>`
+                        : ""
+                }
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p>
+                    ${product.description}
+                </p>
+
+                <span class="price">
+                    ${formatPrice(product.price)}
+                </span>
+
+                <button
+                    class="product-btn"
+                    onclick="pedirProduto('${product.name}')"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Pedir pelo WhatsApp
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        productsContainer.appendChild(card);
+
     });
 
-    updateOrderLink();
-  });
+}
 
-  /* ---------- Horário de atendimento ---------- */
-  const hoursList = document.getElementById('hoursList');
-  if (hoursList) {
-    config.hours.forEach((item) => {
-      const li = document.createElement('li');
-      li.innerHTML = `<span class="day">${item.day}</span><span>${item.time}</span>`;
-      hoursList.appendChild(li);
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+filters.forEach(filter => {
+
+    filter.addEventListener("click", () => {
+
+        filters.forEach(item => {
+            item.classList.remove("active");
+        });
+
+        filter.classList.add("active");
+
+        const category = filter.dataset.category;
+
+        renderProducts(category);
+
     });
-  }
-
-  /* ---------- Botões gerais de WhatsApp (hero, entrega, footer, flutuante) ---------- */
-  const genericMessage = `Olá, ${config.businessName.replace('Marmitaria ', '')}! Gostaria de saber mais sobre o cardápio de hoje.`;
-  const genericUrl = buildWhatsappUrl(genericMessage);
-
-  ['heroWhatsappBtn', 'deliveryWhatsappBtn', 'footerWhatsappBtn', 'floatingWhatsappBtn'].forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) el.setAttribute('href', genericUrl);
-  });
-
-  /* ---------- Ano no rodapé ---------- */
-  const yearEl = document.getElementById('year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 });
+
+
+/* =====================================================
+   WHATSAPP - PEDIDO GERAL
+===================================================== */
+
+function pedirWhatsApp() {
+
+    const message =
+        "Olá! Vim pelo site da Marmita da Rê e gostaria de conhecer o cardápio e fazer um pedido.";
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+}
+
+
+/* =====================================================
+   WHATSAPP - PRODUTO
+===================================================== */
+
+function pedirProduto(productName) {
+
+    const message =
+        `Olá! Vim pelo site da Marmita da Rê e gostaria de pedir a seguinte marmita: ${productName}. Pode me informar a disponibilidade e como faço o pedido?`;
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+}
+
+
+/* =====================================================
+   MENU MOBILE
+===================================================== */
+
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
+
+const mobileMenu =
+    document.getElementById("mobileMenu");
+
+
+mobileMenuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("show");
+
+});
+
+
+/* =====================================================
+   FECHAR MENU AO CLICAR
+===================================================== */
+
+const mobileLinks =
+    mobileMenu.querySelectorAll("a");
+
+
+mobileLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("show");
+
+    });
+
+});
+
+
+/* =====================================================
+   INICIALIZAR
+===================================================== */
+
+renderProducts();
+
+
+/* =====================================================
+   ANIMAÇÃO SUAVE AO ENTRAR
+===================================================== */
+
+const observer = new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.08
+    }
+);
+
+
+document
+    .querySelectorAll(
+        ".product-card, .differential, .step, .testimonial"
+    )
+    .forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(20px)";
+        element.style.transition = "opacity .6s ease, transform .6s ease";
+
+        observer.observe(element);
+
+    });
