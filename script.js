@@ -37,7 +37,7 @@ const products = [
         price: 16.90,
         category: "tradicional",
         badge: "MAIS PEDIDA",
-        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=85"
+        image: "   "
     },
 
     {
@@ -47,7 +47,7 @@ const products = [
         price: 18.90,
         category: "fitness",
         badge: "FIT",
-        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+        image: "                             "
     },
 
     {
@@ -57,7 +57,7 @@ const products = [
         price: 22.90,
         category: "grande",
         badge: "MAIOR PORÇÃO",
-        image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=85"
+        image: "   "
     },
 
     {
@@ -67,7 +67,7 @@ const products = [
         price: 49.90,
         category: "combo",
         badge: "ECONOMIZE",
-        image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=85"
+        image: "  "
     },
 
     {
@@ -77,7 +77,7 @@ const products = [
         price: 19.90,
         category: "tradicional",
         badge: "",
-        image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=800&q=85"
+        image: "  "
     },
 
     {
@@ -87,7 +87,7 @@ const products = [
         price: 21.90,
         category: "tradicional",
         badge: "",
-        image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=85"
+        image: "  "
     },
 
     {
@@ -97,7 +97,7 @@ const products = [
         price: 20.90,
         category: "fitness",
         badge: "LOW CARB",
-        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=85"
+        image: "  "
     },
 
     {
@@ -107,7 +107,7 @@ const products = [
         price: 79.90,
         category: "combo",
         badge: "ECONOMIZE",
-        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"
+        image: "  "
     }
 
 ];
