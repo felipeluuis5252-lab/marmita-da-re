@@ -1,169 +1,735 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Marmitaria da Rê | Comida Caseira e Marmitas</title>
-<meta name="description" content="Confira o cardápio da Marmitaria da Rê e peça sua marmita caseira pelo WhatsApp.">
-<meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Open Graph (para compartilhamento no WhatsApp/redes sociais) -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Marmitaria da Rê | Comida Caseira e Marmitas">
-<meta property="og:description" content="Confira o cardápio da Marmitaria da Rê e peça sua marmita caseira pelo WhatsApp.">
-<meta property="og:image" content="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop">
-<meta property="og:locale" content="pt_BR">
+    <title>Marmita da Rê | Comida Caseira</title>
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍲</text></svg>">
+    <meta name="description"
+        content="Marmita da Rê - comida caseira, saborosa e preparada com carinho. Escolha sua marmita e peça pelo WhatsApp.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="site-header">
-  <div class="header-inner">
-    <span class="logo">Marmitaria <em>da Rê</em> <span aria-hidden="true">🍲</span></span>
-    <a href="#cardapio" class="btn btn-accent btn-sm">Ver Cardápio</a>
-  </div>
-</header>
+    <!-- ================= HEADER ================= -->
 
-<main>
+    <header class="header">
 
-  <!-- ================= HERO ================= -->
-<section class="hero-banner">
-    <div class="hero-banner-container">
-        <img 
-            src="assets/banner-marmita.png" 
-            alt="Marmita da Rê - Comida caseira, quentinha e do jeito que você gosta"
-            class="hero-banner-image"
-        >
-    </div>
-</section>
-  <div class="banner-actions">
+        <div class="container nav">
 
-    <a href="#cardapio" class="banner-btn banner-btn-menu">
-        🍽️ Ver Cardápio
+            <a href="#inicio" class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <div class="logo-text">
+                    <strong>Marmita da Rê</strong>
+                    <span>COMIDA CASEIRA</span>
+                </div>
+
+            </a>
+
+            <nav class="menu">
+
+                <a href="#inicio" class="active">Início</a>
+
+                <a href="#cardapio">Cardápio</a>
+
+                <a href="#como-funciona">Como funciona</a>
+
+                <a href="#depoimentos">Depoimentos</a>
+
+            </nav>
+
+            <a href="#" class="btn-whatsapp header-whatsapp" onclick="pedirWhatsApp(); return false;">
+
+                <i class="fa-brands fa-whatsapp"></i>
+
+                Pedir pelo WhatsApp
+
+            </a>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu">
+
+            <a href="#inicio">Início</a>
+
+            <a href="#cardapio">Cardápio</a>
+
+            <a href="#como-funciona">Como funciona</a>
+
+            <a href="#depoimentos">Depoimentos</a>
+
+            <a href="#" onclick="pedirWhatsApp(); return false;">
+                <i class="fa-brands fa-whatsapp"></i>
+                Pedir pelo WhatsApp
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <span class="eyebrow">
+                        MARMITARIA SABOR CASEIRO
+                    </span>
+
+                    <h1>
+                        Comida caseira,
+                        <br>
+                        quentinha e do jeito
+                        <br>
+                        <span>que você gosta.</span>
+                    </h1>
+
+                    <p>
+                        Marmitas saborosas, bem temperadas e preparadas
+                        com ingredientes frescos. Mais praticidade para
+                        sua rotina.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#cardapio" class="btn-primary">
+
+                            <i class="fa-solid fa-bars"></i>
+
+                            Ver cardápio
+
+                        </a>
+
+                        <a href="#" class="btn-whatsapp" onclick="pedirWhatsApp(); return false;">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                            Pedir pelo WhatsApp
+
+                        </a>
+
+                    </div>
+
+                    <div class="hero-benefits">
+
+                        <div>
+                            <i class="fa-solid fa-utensils"></i>
+
+                            <span>
+                                Comida de
+                                <br>
+                                qualidade
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-regular fa-heart"></i>
+
+                            <span>
+                                Sabor caseiro
+                                <br>
+                                de verdade
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-truck"></i>
+
+                            <span>
+                                Entrega rápida
+                                <br>
+                                e segura
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CARDÁPIO ================= -->
+
+        <section class="menu-section" id="cardapio">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            NOSSO CARDÁPIO
+                        </span>
+
+                        <h2>
+                            Marmitas para todos os gostos
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Do tradicional ao fitness, temos a marmita
+                        ideal para você. Confira nossas opções.
+                    </p>
+
+                </div>
+
+
+                <!-- FILTROS -->
+
+                <div class="filters">
+
+                    <button class="filter active" data-category="todos">
+                        Todos
+                    </button>
+
+                    <button class="filter" data-category="tradicional">
+                        Tradicionais
+                    </button>
+
+                    <button class="filter" data-category="fitness">
+                        Fitness
+                    </button>
+
+                    <button class="filter" data-category="grande">
+                        Grandes
+                    </button>
+
+                    <button class="filter" data-category="combo">
+                        Combos
+                    </button>
+
+                </div>
+
+
+                <!-- PRODUTOS -->
+
+                <div class="products" id="products">
+
+                    <!-- Os produtos serão criados pelo JavaScript -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DIFERENCIAIS ================= -->
+
+        <section class="differentials">
+
+            <div class="container">
+
+                <div class="section-header dark-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            POR QUE ESCOLHER A GENTE?
+                        </span>
+
+                        <h2>
+                            Nossos diferenciais
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="differential-grid">
+
+                    <div class="differential">
+
+                        <div class="differential-icon">
+
+                            <i class="fa-solid fa-cheese"></i>
+
+                        </div>
+
+                        <h3>Comida feita na hora</h3>
+
+                        <p>
+                            Tudo fresquinho e preparado com muito sabor.
+                        </p>
+
+                    </div>
+
+
+                    <div class="differential">
+
+                        <div class="differential-icon">
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                        </div>
+
+                        <h3>Entrega rápida</h3>
+
+                        <p>
+                            Receba sua marmita com praticidade.
+                        </p>
+
+                    </div>
+
+
+                    <div class="differential">
+
+                        <div class="differential-icon">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </div>
+
+                        <h3>Ingredientes frescos</h3>
+
+                        <p>
+                            Selecionados com muito cuidado.
+                        </p>
+
+                    </div>
+
+
+                    <div class="differential">
+
+                        <div class="differential-icon">
+
+                            <i class="fa-regular fa-credit-card"></i>
+
+                        </div>
+
+                        <h3>Pagamento fácil</h3>
+
+                        <p>
+                            Pix, cartão ou dinheiro. Do seu jeito.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= COMO FUNCIONA ================= -->
+
+        <section class="how-section" id="como-funciona">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            COMO PEDIR
+                        </span>
+
+                        <h2>
+                            É muito simples!
+                        </h2>
+
+                    </div>
+
+                    <span class="handwriting">
+                        Do seu jeito,
+                        <br>
+                        sem complicação!
+                    </span>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            1
+                        </div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-list"></i>
+                        </div>
+
+                        <div>
+                            <h3>Escolha sua marmita</h3>
+
+                            <p>
+                                Veja nosso cardápio e escolha
+                                a opção que preferir.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="step-arrow">
+                        →
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            2
+                        </div>
+
+                        <div class="step-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+                        <div>
+                            <h3>Informe o endereço</h3>
+
+                            <p>
+                                Nos envie pelo WhatsApp
+                                os dados do seu pedido.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="step-arrow">
+                        →
+                    </div>
+
+
+                    <div class="step">
+
+                        <div class="step-number">
+                            3
+                        </div>
+
+                        <div class="step-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <div>
+                            <h3>Receba em casa</h3>
+
+                            <p>
+                                Pronto! Sua marmita chega
+                                quentinha e no horário combinado.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DEPOIMENTOS ================= -->
+
+        <section class="testimonials" id="depoimentos">
+
+            <div class="container">
+
+                <span class="section-label">
+                    DEPOIMENTOS
+                </span>
+
+                <h2>
+                    Quem já pediu, aprovou!
+                </h2>
+
+
+                <div class="testimonial-grid">
+
+                    <div class="testimonial">
+
+                        <div class="customer">
+
+                            <div class="avatar">
+                                M
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Mariana
+                                </strong>
+
+                                <div class="stars">
+                                    ★★★★★
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "Comida muito saborosa e chegou
+                            bem quentinha. Já virei cliente!"
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="customer">
+
+                            <div class="avatar">
+                                R
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Rodrigo
+                                </strong>
+
+                                <div class="stars">
+                                    ★★★★★
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "A porção é muito boa e o tempero
+                            é excelente. Recomendo!"
+                        </p>
+
+                    </div>
+
+
+                    <div class="testimonial">
+
+                        <div class="customer">
+
+                            <div class="avatar">
+                                J
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Juliana
+                                </strong>
+
+                                <div class="stars">
+                                    ★★★★★
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p>
+                            "Foi muito fácil pedir pelo WhatsApp.
+                            Comida deliciosa!"
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CTA FINAL ================= -->
+
+        <section class="final-cta">
+
+            <div class="final-overlay"></div>
+
+            <div class="container final-content">
+
+                <div>
+
+                    <span class="section-label">
+                        BATEU A FOME?
+                    </span>
+
+                    <h2>
+                        Peça sua marmita agora!
+                    </h2>
+
+                    <p>
+                        Comida caseira, saborosa e pronta
+                        para deixar seu dia muito mais prático.
+                    </p>
+
+                    <a href="#" class="btn-whatsapp large"
+                        onclick="pedirWhatsApp(); return false;">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        Pedir pelo WhatsApp
+
+                    </a>
+
+                </div>
+
+
+                <div class="final-info">
+
+                    <div>
+
+                        <i class="fa-regular fa-clock"></i>
+
+                        <strong>
+                            Atendimento
+                        </strong>
+
+                        <span>
+                            Segunda a sábado
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-truck"></i>
+
+                        <strong>
+                            Área de entrega
+                        </strong>
+
+                        <span>
+                            Consulte pelo WhatsApp
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div class="footer-logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-utensils"></i>
+                </div>
+
+                <div class="logo-text">
+                    <strong>Marmita da Rê</strong>
+                    <span>COMIDA CASEIRA</span>
+                </div>
+
+            </div>
+
+
+            <div class="social">
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" onclick="pedirWhatsApp(); return false;" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#inicio">
+                    Início
+                </a>
+
+                <a href="#cardapio">
+                    Cardápio
+                </a>
+
+                <a href="#como-funciona">
+                    Como funciona
+                </a>
+
+                <a href="#depoimentos">
+                    Depoimentos
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 Marmita da Rê. Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= WHATSAPP FLUTUANTE ================= -->
+
+    <a href="#" class="floating-whatsapp"
+        onclick="pedirWhatsApp(); return false;">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+        <span>
+            Pedir pelo WhatsApp
+        </span>
+
     </a>
 
-    <a 
-        href="https://wa.me/5511999999999?text=Olá!%20Vi%20a%20Marmita%20da%20Rê%20e%20quero%20fazer%20um%20pedido."
-        target="_blank"
-        class="banner-btn banner-btn-whatsapp"
-    >
-        <i class="fab fa-whatsapp"></i>
-        Pedir pelo WhatsApp
-    </a>
 
-</div>
-  <!-- ================= CARDÁPIO ================= -->
-  <section id="cardapio" class="menu-section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>🍽️ Cardápio de Hoje</h2>
-        <p class="menu-date" id="menuDate"></p>
-      </div>
+    <script src="script.js"></script>
 
-      <div class="menu-grid" id="menuGrid">
-        <!-- Cards gerados automaticamente pelo script.js a partir do array "menu" -->
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= POR QUE PEDIR ================= -->
-  <section class="why-section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Por que pedir na Marmitaria da Rê?</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <span class="why-icon" aria-hidden="true">❤️</span>
-          <h3>Feita com carinho</h3>
-          <p>Comida preparada pensando em você.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-icon" aria-hidden="true">🥘</span>
-          <h3>Comida caseira</h3>
-          <p>Aquele sabor de comida feita em casa.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-icon" aria-hidden="true">🔥</span>
-          <h3>Feita fresquinha</h3>
-          <p>Preparada para deixar seu almoço ainda melhor.</p>
-        </div>
-        <div class="why-card">
-          <span class="why-icon" aria-hidden="true">💬</span>
-          <h3>Pedido fácil</h3>
-          <p>Escolha sua marmita e peça direto pelo WhatsApp.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= GALERIA ================= -->
-  <section class="gallery-section">
-    <div class="container">
-      <div class="section-heading">
-        <h2>Direto da nossa cozinha</h2>
-      </div>
-      <div class="gallery-grid">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?q=80&w=700&auto=format&fit=crop" alt="Prato de comida caseira brasileira com arroz e feijão">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=700&auto=format&fit=crop" alt="Frango grelhado com legumes">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=700&auto=format&fit=crop" alt="Salada fresca colorida">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=700&auto=format&fit=crop" alt="Marmita completa pronta para entrega">
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= ENTREGA + HORÁRIO ================= -->
-  <section class="info-section">
-    <div class="container">
-      <div class="info-grid">
-        <div class="info-card">
-          <h2>📍 Entrega e Retirada</h2>
-          <p>Consulte as regiões de entrega e os valores pelo WhatsApp.</p>
-          <a href="#" id="deliveryWhatsappBtn" class="btn btn-whatsapp">💬 Falar com a Marmitaria</a>
-        </div>
-
-        <div class="info-card">
-          <h2>🕐 Horário de Atendimento</h2>
-          <ul class="hours-list" id="hoursList">
-            <!-- Gerado automaticamente pelo script.js a partir do objeto "config.hours" -->
-          </ul>
-          <p class="hours-note">(horários podem ser alterados)</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= CTA FINAL ================= -->
-  <section class="final-cta">
-    <div class="container final-cta-inner">
-      <h2>Bateu aquela fome?</h2>
-      <p>Veja o cardápio de hoje e peça sua marmita agora mesmo pelo WhatsApp.</p>
-      <a href="#cardapio" class="btn btn-accent btn-lg">🍽️ Ver Cardápio</a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="site-footer">
-  <span class="logo logo-footer">Marmitaria <em>da Rê</em> <span aria-hidden="true">🍲</span></span>
-  <p>Comida caseira feita com carinho <span aria-hidden="true">❤️</span></p>
-  <a href="#" id="footerWhatsappBtn" class="btn btn-whatsapp">💬 Pedidos pelo WhatsApp</a>
-  <p class="copyright">© <span id="year"></span> Marmitaria da Rê. Todos os direitos reservados.</p>
-</footer>
-
-<!-- Botão flutuante do WhatsApp -->
-<a href="#" id="floatingWhatsappBtn" class="floating-whatsapp" aria-label="Pedir pelo WhatsApp">
-  <span aria-hidden="true">💬</span>
-</a>
-
-<script src="script.js"></script>
 </body>
+
 </html>
