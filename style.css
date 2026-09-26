@@ -361,3 +361,52 @@ a:focus-visible, button:focus-visible {
         height: auto;
     }
 }
+.banner-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 22px 20px;
+    background: #17120f;
+}
+
+.banner-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 210px;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 0.25s ease;
+}
+
+.banner-btn-menu {
+    background: #d99a2b;
+    color: #17120f;
+}
+
+.banner-btn-whatsapp {
+    background: #25d366;
+    color: white;
+}
+
+.banner-btn:hover {
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+
+    .banner-actions {
+        flex-direction: column;
+        padding: 18px 15px 25px;
+    }
+
+    .banner-btn {
+        width: 100%;
+        max-width: 350px;
+    }
+}
