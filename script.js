@@ -57,7 +57,7 @@ const products = [
         price: 22.90,
         category: "grande",
         badge: "MAIOR PORÇÃO",
-        image: "   "
+        image: "."
     },
 
     {
@@ -67,7 +67,7 @@ const products = [
         price: 49.90,
         category: "combo",
         badge: "ECONOMIZE",
-        image: "  "
+        image: "."
     },
 
     {
@@ -77,7 +77,7 @@ const products = [
         price: 19.90,
         category: "tradicional",
         badge: "",
-        image: "  "
+        image: "."
     },
 
     {
@@ -87,7 +87,7 @@ const products = [
         price: 21.90,
         category: "tradicional",
         badge: "",
-        image: "  "
+        image: "."
     },
 
     {
@@ -97,7 +97,7 @@ const products = [
         price: 20.90,
         category: "fitness",
         badge: "LOW CARB",
-        image: "  "
+        image: "."
     },
 
     {
@@ -107,7 +107,7 @@ const products = [
         price: 79.90,
         category: "combo",
         badge: "ECONOMIZE",
-        image: "  "
+        image: "."
     }
 
 ];
